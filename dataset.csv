@@ -1,0 +1,44 @@
+,Description,Category
+0,hii,Other
+1,Random,Other
+2,Random1,Other
+3,Random2,Other
+4,Random3,Other
+5,Random4,Other
+6,Random5,Other
+7,Random6,Other
+8,Random7,Other
+9,shop,Other
+10,swiggy,Food
+11,zomato,Food
+12,starbucks,Food
+13,pizza hut,Food
+14,mcdonalds,Food
+15,dominos,Food
+16,burger king,Food
+17,subway,Food
+18,kfc,Food
+19,uber,Transport
+20,ola,Transport
+21,metro,Transport
+22,auto,Transport
+23,train,Transport
+24,cab,Transport
+25,bus,Transport
+26,amazon,Shopping
+27,flipkart,Shopping
+28,myntra,Shopping
+29,big bazaar,Shopping
+30,ajio,Shopping
+31,nykaa,Shopping
+32,meesho,Shopping
+33,snapdeal,Shopping
+34,electricity,Utilities
+35,water bill,Utilities
+36,gas bill,Utilities
+37,mobile recharge,Utilities
+38,broadband bill,Utilities
+39,wifi,Utilities
+40,dth recharge,Utilities
+41,insurance,Utilities
+42,rent,Utilities
