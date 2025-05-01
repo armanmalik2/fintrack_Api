@@ -78,4 +78,4 @@ def predict_category(data: TextRequest):
             title=i
             break
 
-    return {"title":title,"prediction": prediction,"amount":amount,"type":type1}
+    return {"title":title,"category": prediction,"amount":amount,"type":type1}
