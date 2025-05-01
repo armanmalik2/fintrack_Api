@@ -27,6 +27,7 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+
 @app.post("/predict")
 def predict_category(data: TextRequest):
     if not data.text:
@@ -51,6 +52,12 @@ def predict_category(data: TextRequest):
     "annual income", "income source", "app earnings", "pension", "alimony",
     "scholarship", "financial aid", "tax refund"
     ]
+    title_list = ['shop', 'swiggy', 'zomato', 'starbucks', 'pizza hut', 'mcdonalds', 
+                  'dominos', 'burger king', 'subway', 'kfc', 'uber', 'ola', 'metro', 
+                  'auto', 'train', 'cab', 'bus', 'amazon', 'flipkart', 'myntra', 
+                  'big bazaar', 'ajio', 'nykaa', 'meesho', 'snapdeal', 'electricity', 
+                  'water bill', 'gas bill', 'mobile recharge', 'broadband bill', 'wifi', 
+                  'dth recharge', 'insurance', 'rent']
 
     for i in cleaned.split(' '):
         if i.isnumeric() ==True:
@@ -66,4 +73,9 @@ def predict_category(data: TextRequest):
         else:
             type1="expense"
 
-    return {"title":cleaned,"category": prediction,"amount":amount,"type":type1}
+    for i in cleaned.split(' '):
+        if i in title_list:
+            title=i
+            break
+
+    return {"title":title,"prediction": prediction,"amount":amount,"type":type1}
