@@ -4,9 +4,8 @@ import joblib
 
 # Load model and vectorizer once at startup
 model, vectorizer = joblib.load('predictor_ai.joblib')
-amount =0
-title = ""
-type1 = ["Expense"]
+
+
 def clean_text(text):
     return text.lower().strip()
 
@@ -26,10 +25,9 @@ def predict_category(data: TextRequest):
     vectorized = vectorizer.transform([cleaned])
     prediction = model.predict(vectorized)[0]
     
-    for i in cleaned.split(' '):
-        if i.isnumeric():
-            amount = i
-    
+    amount =0
+    title = "other"
+    type1 = "expense"
     income_words = [
     "income", "earning", "salary", "wage", "paycheck", "stipend", "bonus", "revenue",
     "profit", "gain", "inflow", "deposit", "earning", "commission", "return", "dividend",
@@ -43,12 +41,18 @@ def predict_category(data: TextRequest):
     "scholarship", "financial aid", "tax refund"
     ]
 
+    for i in cleaned.split(' '):
+        if i.isnumeric() ==True:
+            amount = i
+            break
+    
+    
 
     for i in cleaned.split(' '):
         if i in income_words:
-            type1[0]="Income"
+            type1="income"
             break
         else:
-            type1[0]="Expense"
+            type1="expense"
 
-    return {"Title":vectorizer,"prediction": prediction,"Amount":amount,"Type":type1[0]}
+    return {"title":cleaned,"prediction": prediction,"amount":amount,"type":type1}
