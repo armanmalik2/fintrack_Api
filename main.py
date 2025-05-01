@@ -66,4 +66,4 @@ def predict_category(data: TextRequest):
         else:
             type1="expense"
 
-    return {"title":cleaned,"prediction": prediction,"amount":amount,"type":type1}
+    return {"title":cleaned,"category": prediction,"amount":amount,"type":type1}
